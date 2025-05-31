@@ -6,7 +6,7 @@ Simple project to test SDL3 / C / CMAKE.
 
 ### cmake
 
-Install `cmake` from your Linux distribution or use `brew` on osx.
+Install `cmake` 3.30 or later from your Linux distribution or use `brew` on osx.
 
 ### SDL3
 
