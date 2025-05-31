@@ -11,12 +11,16 @@
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
 
+#define WALKER_SIZE 2
+#define MAX_STEPS (((WINDOW_HEIGHT * WINDOW_WIDTH) / 2) / WALKER_SIZE)
+
 struct State {
     SDL_Window *window;
     SDL_Renderer *renderer;
     SDL_Event event;
     bool is_running;
     struct SDL_FRect walker;
+    uint32_t steps;
 };
 
 #endif

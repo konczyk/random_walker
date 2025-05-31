@@ -18,5 +18,8 @@ bool init_sdl(struct State *s) {
         return false;
     }
 
+    SDL_SetRenderDrawColor(s->renderer, 255, 255, 255, 255);
+    SDL_RenderClear(s->renderer);
+
     return true;
 }

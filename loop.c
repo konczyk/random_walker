@@ -4,9 +4,11 @@
 void run(struct State *s) {
     while (s->is_running) {
         process_input(s);
-        update(s);
-        draw(s);
-        SDL_Delay(1);
+        if (s->steps < MAX_STEPS) {
+            update(s);
+            draw(s);
+        }
+        SDL_Delay(10);
     }
 }
 
@@ -32,7 +34,8 @@ void process_input(struct State *s) {
 }
 
 void update(struct State *s) {
-
+    update_walker(s);
+    s->steps++;
 }
 
 void draw(struct State *s) {

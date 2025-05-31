@@ -28,6 +28,7 @@ bool setup(struct State **state) {
     }
 
     struct State *s = *state;
+    s->steps = 0;
 
     if (!init_sdl(s)) {
         return false;
