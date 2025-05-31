@@ -1,5 +1,6 @@
 #include "main.h"
 #include "init.h"
+#include "walker.h"
 
 bool setup(struct State **state);
 void cleanup(struct State **state);
@@ -32,8 +33,11 @@ bool setup(struct State **state) {
         return false;
     }
 
+    if (!init_walker(s)) {
+        return false;
+    }
+
     s->is_running = true;
-    s->last_frame_time = 0;
 
     return true;
 }

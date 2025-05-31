@@ -1,10 +1,12 @@
 #include "loop.h"
+#include "walker.h"
 
 void run(struct State *s) {
     while (s->is_running) {
         process_input(s);
         update(s);
         draw(s);
+        SDL_Delay(1);
     }
 }
 
@@ -31,15 +33,9 @@ void process_input(struct State *s) {
 
 void update(struct State *s) {
 
-//
-//    while (SDL_GetTicks() >= s->last_frame_time + FRAME_TARGET_TIME)
-//        ;
-//
-//
-//    s->last_frame_time = SDL_GetTicks();
 }
 
 void draw(struct State *s) {
-    SDL_RenderClear(s->renderer);
     SDL_RenderPresent(s->renderer);
+    draw_walker(s);
 }
