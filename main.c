@@ -1,4 +1,5 @@
 #include "main.h"
+#include <time.h>
 #include "init.h"
 #include "walker.h"
 
@@ -39,6 +40,7 @@ bool setup(struct State **state) {
     }
 
     s->is_running = true;
+    srand(time(NULL));
 
     return true;
 }
