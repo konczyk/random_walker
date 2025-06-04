@@ -13,4 +13,4 @@ Install `cmake` 3.30 or later from your Linux distribution and execute:
 
     $ ./bin/random_walker
 
-![random walker](walker.png)
+![random walker](walker.gif)
