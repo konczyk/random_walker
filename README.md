@@ -20,3 +20,5 @@ Download and unpack [SDL3](https://github.com/libsdl-org/SDL/releases/download/r
 ## Run
 
     $ ./bin/random_walker
+
+![random walker](walker.png)
