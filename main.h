@@ -10,8 +10,10 @@
 #define WINDOW_TITLE "Random Walker"
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
+#define FPS 60
+#define FRAME_TARGET_TIME (1000 / FPS)
 
-#define WALKER_SIZE 2
+#define WALKER_SIZE 3
 #define MAX_STEPS (((WINDOW_HEIGHT * WINDOW_WIDTH) / 2) / WALKER_SIZE)
 
 struct State {
@@ -21,6 +23,12 @@ struct State {
     bool is_running;
     struct SDL_FRect walker;
     uint32_t steps;
+
+    uint64_t last_frame_time;
+    uint64_t frame_count_init_time;
+    int frame_count;
+    int avg_fps;
+    bool enable_fps_count;
 };
 
 #endif

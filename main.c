@@ -40,6 +40,10 @@ bool setup(struct State **state) {
     }
 
     s->is_running = true;
+    s->last_frame_time = 0;
+    s->frame_count_init_time = SDL_GetTicks();
+    s->frame_count = 0;
+    s->enable_fps_count = false;
     srand(time(NULL));
 
     return true;
@@ -57,7 +61,6 @@ void cleanup(struct State **state) {
             s->window = nullptr;
         }
         free(s);
-        s = nullptr;
     }
     SDL_Quit();
 }
