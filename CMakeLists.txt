@@ -3,7 +3,13 @@ project(random_walker C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_subdirectory(vendor/SDL3-3.2.16 EXCLUDE_FROM_ALL)
+option(VENDOR "Use vendor libraries" OFF)
+
+if(VENDOR)
+    add_subdirectory(vendor/SDL3 EXCLUDE_FROM_ALL)
+else()
+    find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3-shared)
+endif()
 
 set(SOURCES
         main.c
